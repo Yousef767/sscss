@@ -184,7 +184,6 @@ input[type="search"]::-webkit-search-results-decoration {
 select {
   -webkit-appearance: none;
   -moz-appearance: none;
-  font-family: "Poppins", sans-serif;
 }
 
 /* End Default */
@@ -664,6 +663,22 @@ aside.showAside {
   padding-left: 5% !important;
 }
 .tools {
+  a{
+    color: #fff;
+    text-decoration: none;
+    i{
+      color: $main;
+      font-size: 1.5em;
+      padding: 0 2px;
+      cursor: pointer;
+    }
+  }
+  i{
+    color: $main;
+    font-size: 1.5em;
+    padding: 0 2px;
+    cursor: pointer;
+  }
   img {
     cursor: pointer;
     &:nth-child(1) {
@@ -677,6 +692,21 @@ aside.showAside {
     }
   }
 }
+.t3.tools {
+  img {
+    cursor: pointer;
+    &:nth-child(1) {
+      width: 20px;
+    }
+    &:nth-child(2) {
+      width: 20px;
+    }
+    &:nth-child(3) {
+      width: 17px;
+    }
+  }
+}
+
 .tools.w120 {
   width: 120px;
 }
@@ -2215,6 +2245,30 @@ aside.showAside {
         img {
           width: 40px;
         }
+        .select{
+          position: relative;
+          @include flex();
+          i{
+            position: absolute;
+            right: 0px;
+            color: #fff;
+          }
+        }
+        select{
+          @include noBorder();
+          background-color: $main;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          cursor: pointer;
+          border-radius: 5px;
+          padding: 0 20px;
+          color: #fff;
+          height: 40px;
+          text-align: left;
+          -webkit-appearance: listbox !important;; 
+  -moz-appearance: listbox !important;
+        }
         .symbol{
           width: 60px;
         }
@@ -2343,7 +2397,6 @@ aside.showAside {
   gap: 20px;
   width: 100%;
   flex-wrap: wrap;
-  padding-top: 20px;
 }
 .pImage{
   position: relative;
@@ -2368,5 +2421,79 @@ aside.showAside {
     left: -5px;
     top: -5px;
     cursor: pointer;
+  }
+}
+
+.orderInfo{
+  max-width: 600px;
+  width: 100%;
+  padding: 50px 20px;
+  position: relative;
+  
+}
+
+.cartP {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  h4 {
+    font-size: 1em;
+    color: $dark-main;
+    font-weight: 500;
+  }
+}
+
+.cartPImg {
+  @include flex();
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 7px;
+  background-color: $gray;
+  img {
+    width: 100%;
+    object-fit: contain;
+  }
+}
+.tal{
+  text-align-last: left;
+}
+.tOrders{
+  overflow: auto;
+  width: 100%;
+  padding-top: 20px;
+}
+.orderDetails{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  border-radius: 10px;
+  position: relative;
+  padding-top: 50px;
+}
+
+.rr{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  span{
+    &:nth-child(1){
+      color: $main;
+      font-weight: 500;
+    }
+  }
+  a{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    color: $dark-main;
+    font-size: 1.2em;
+    color: #d30000;
+    i{
+      color: #d30000;
+    }
   }
 }
